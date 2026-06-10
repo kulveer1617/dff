@@ -1,0 +1,19 @@
+name: actionworkflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    
+jobs:
+  actionjob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: |
+          echo "This is where I checked out the code"
+          ls
